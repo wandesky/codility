@@ -16,3 +16,58 @@ def solution(A, B, K):
     
     #Possible solution B#
     
+    
+    Exam solution
+    # you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+def solution(A, B):
+    # write your code in Python 3.6
+    maxy, miny = max(max(A), max(B)), min(min(A), min(B))
+
+    leny = len(A)
+    maxylist = [None]*leny
+    minimum, maximum = 1, 1
+    counter = 1
+    smallest = maxy
+    for i in range(0, leny, 1):
+        maxylist[i] = max(A[i], B[i])
+        # print('maxy list is currently', maxylist)
+    sorty = sorted(maxylist)
+    
+    counter = 1
+    maxy, miny = max(sorty), min(sorty)
+    # sorty = sorted(A)
+    if(maxy < 1 or len(A) == 0):
+        return 1
+    if(miny > 1):
+        return 1
+    for i in range(0, len(A), 1):
+        if(counter == sorty[i]):
+            counter += 1
+        if(sorty[i] > counter):
+            break
+    return counter   
+        
+        
+        
+    #     if(maxylist[i] >= 1 and maxylist[i] == minimum):
+    #         minimum += 1
+    #         if(minimum < smallest):
+    #             minimum = smallest
+    #         # minimum = maxylist[i]
+    #         minimum = smallest + 1
+    #         # miny += 1
+    #         print('minimum just got updated to ', minimum)
+    #     elif(maxylist[i] >= 1 and maxylist[i] < miny ):
+    #         miny = minimum
+    #     if(maxylist[i] >= 1 and maxylist[i] >= maxy ):
+    #         print('maximum is ', maximum)
+    #         maximum = maxylist[i]
+            
+    #     # if(counter == minimum):
+    #     #     counter += 1
+    #     # if(maxylist[i] > counter):
+    #     #     break
+    # return minimum
+        
